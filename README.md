@@ -1,36 +1,155 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Workflow Builder – Frontend
 
-## Getting Started
+A modern productivity web app built with **Next.js** that helps users manage tasks, track streaks, earn XP, and stay consistent.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+* 🔐 Authentication (Login / Signup)
+* 🏠 Home Page (Landing + Overview)
+* 📊 Dashboard (Tasks + Activity + Stats)
+* ✅ Task Management (Add / Edit / Complete)
+* 🔥 Streak Tracking System
+* 🎮 XP & Badge System (Gamification)
+* ⚙️ Settings Page (Profile & Preferences)
+* ⏱️ Relative Time (e.g., 2h, 1d ago)
+
+---
+
+## 🧱 Pages Structure
+
+| Page         | Description             |
+| ------------ | ----------------------- |
+| `/`          | Home / Landing page     |
+| `/login`     | User login              |
+| `/signup`    | User registration       |
+| `/dashboard` | Main user dashboard     |
+| `/settings`  | User settings & profile |
+
+---
+
+## 🛠️ Tech Stack
+
+* **Next.js 16**
+* **React**
+* **Tailwind CSS**
+* **NextAuth.js** (Authentication)
+* **Day.js** (Time formatting)
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/virat-pod/workflow-builder-client.git
+cd workflow-builder-client
+npm install
+```
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_SERVER_URL=http://localhost:5000
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_secret
+```
+
+---
+
+## 🚀 Running the Project
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👉 App will run on:
+`http://localhost:3000`
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔗 API Integration
 
-## Learn More
+Frontend connects to backend using:
 
-To learn more about Next.js, take a look at the following resources:
+```js
+process.env.NEXT_PUBLIC_SERVER_URL
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Example:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```js
+fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/todo`)
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📊 Core Features Explained
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### ✅ Task System
+
+* Create, edit, and complete tasks
+* Real-time UI updates
+* Optimistic updates for smooth UX
+
+---
+
+### 🔥 Streak System
+
+* Tracks consecutive active days
+* Breaks if a day is missed
+
+---
+
+### 🎮 XP & Badges
+
+* Earn XP on task completion
+* Unlock badges based on XP milestones
+
+---
+
+### ⏱️ Time Tracking
+
+* Uses Day.js for:
+
+```js
+dayjs(task.createdAt).fromNow()
+```
+
+---
+
+## 📁 Folder Structure
+
+```
+/app
+  /home
+  /dashboard
+  /settings
+/components
+/lib
+```
+
+---
+
+## 💡 Future Improvements
+
+* 📅 Calendar streak view (GitHub style)
+* 🏆 Leaderboard system
+* 🔔 Notifications
+* 🌙 Dark mode
+
+---
+
+## 🙌 Author
+
+Built with 💻 by **Virat**
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
