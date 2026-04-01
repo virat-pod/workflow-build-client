@@ -30,7 +30,6 @@ export default function SettingsPage() {
   const image = session?.user?.image ?? null;
 
   const handleSave = async (profile) => {
-
     if (!name.trim() && !profile) return;
 
     setSaving(true);
@@ -43,23 +42,22 @@ export default function SettingsPage() {
           body: JSON.stringify({
             user: userEmail,
             name: name.trim(),
-            profile
+            profile,
           }),
         },
       );
-      console.log("res", res)
+      console.log("res", res);
       const data = await res.json();
-      console.log("data", data)
+      console.log("data", data);
       if (data.success) {
         await update({
           ...session,
           user: { ...session.user, name: name.trim(), image: profile },
         });
       }
-
     } catch (e) {
       showNotification(`something went wrong ${e}`, "error");
-      console.log(e)
+      console.log(e);
     } finally {
       setSaving(false);
     }
@@ -68,7 +66,9 @@ export default function SettingsPage() {
   const handleDelete = async () => {
     setDeleting(true);
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/${uid}/delete`, { method: "DELETE" });
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/${uid}/delete`, {
+        method: "DELETE",
+      });
       await signOut({ callbackUrl: "/" });
     } catch (e) {
       console.error(e);
@@ -100,7 +100,6 @@ export default function SettingsPage() {
   return (
     <div className="bg-[#f7f6f3] min-h-[calc(100vh-58px)] px-5 md:px-8 sm:py-21.5 py-24 pb-22 sm:pb-18">
       <div className="max-w-[600px] mx-auto flex flex-col gap-2">
-    
         <div className="mb-4">
           <p className="text-[11px] font-semibold tracking-[1.5px] uppercase text-[#c4bfb6] mb-2">
             Account
@@ -113,13 +112,11 @@ export default function SettingsPage() {
           </h1>
         </div>
 
-   
         <div className="flex flex-col gap-1.5">
           <p className="text-[11px] font-semibold tracking-[1.5px] uppercase text-[#c4bfb6] px-0.5">
             Profile
           </p>
           <div className="bg-white border border-[#e8e5de] rounded-[14px] overflow-hidden">
-        
             <div className="flex items-center gap-4 px-5 py-4 border-b border-[#f0ede6]">
               <span className="text-[13px] font-semibold text-[#9e9890] w-20 flex-shrink-0">
                 Photo
@@ -168,7 +165,6 @@ export default function SettingsPage() {
               </button>
             </div>
 
-            
             <div className="px-5 py-4 border-b border-[#f0ede6]">
               <p className="text-[11.5px] font-semibold text-[#9e9890] mb-1.5">
                 Display name
@@ -189,7 +185,6 @@ export default function SettingsPage() {
               />
             </div>
 
-   
             <div className="px-5 py-4 border-b border-[#f0ede6]">
               <p className="text-[11.5px] font-semibold text-[#9e9890] mb-1.5">
                 Email
@@ -206,7 +201,9 @@ export default function SettingsPage() {
 
             <div className="px-5 py-4">
               <button
-                onClick={()=> {handleSave()}}
+                onClick={() => {
+                  handleSave();
+                }}
                 disabled={
                   saving || !name.trim() || name === session?.user?.name
                 }
@@ -218,7 +215,6 @@ export default function SettingsPage() {
           </div>
         </div>
 
-   
         <div className="flex flex-col gap-1.5">
           <p className="text-[11px] font-semibold tracking-[1.5px] uppercase text-[#c4bfb6] px-0.5">
             Badge wallet
@@ -293,8 +289,18 @@ export default function SettingsPage() {
             </div>
           </div>
         </div>
+        <div className="flex justify-end">
+          <p className="text-[11px] font-semibold tracking-[1.5px] uppercase text-[#c4bfb6] px-0.5">
+            Sign out
+          </p>
+          <button
+            onClick={() => signOut({ callbackUrl: "/" })}
+            className="bg-red-50 border border-red-200 text-red-600 text-[12.5px] font-semibold px-3.5 py-2 rounded-[8px] hover:bg-red-100 transition-colors flex-shrink-0"
+          >
+            Sign out
+          </button>
+        </div>
       </div>
-
 
       {showDeleteConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
