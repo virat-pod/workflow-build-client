@@ -48,6 +48,7 @@ export default function Auth({ auth }) {
             <button
               type="button"
               onClick={() => {
+                setloadings(true);
                 signIn("google", {
                   callbackUrl: "/home",
                 });
@@ -61,6 +62,7 @@ export default function Auth({ auth }) {
             <button
               type="button"
               onClick={() => {
+                setloadings(true);
                 signIn("github", {
                   callbackUrl: "/home",
                 });
