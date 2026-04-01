@@ -170,12 +170,12 @@ const Navbar = () => {
               </button>
 
               {dropdownOpen && (
-                <div className="absolute right-0 top-[calc(100%+8px)] w-42 sm:w-48 bg-white border border-[#e8e5de] rounded-xl shadow-sm overflow-hidden z-50">
+                <div className="absolute right-0 top-[calc(100%+8px)] w-48 bg-white border border-[#e8e5de] rounded-xl shadow-sm overflow-hidden z-50">
                   <div className="px-3.5 py-2.5 border-b border-[#f0ede6]">
                     <p className="text-[12px] font-semibold text-[#1a1916] truncate">
                       {session.user?.name}
                     </p>
-                    <p className="text-[8.5px] sm:text-[11px] text-[#9e9890] truncate">
+                    <p className="text-[11px] text-[#9e9890] truncate">
                       {session.user?.email}
                     </p>
                   </div>
@@ -192,7 +192,7 @@ const Navbar = () => {
                       key={href}
                       href={href}
                       onClick={() => setDropdownOpen(false)}
-                      className="hidden sm:flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-[#6b6760] hover:text-[#1a1916] hover:bg-[#f7f6f3] transition-colors"
+                      className="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-[#6b6760] hover:text-[#1a1916] hover:bg-[#f7f6f3] transition-colors"
                     >
                       <span className="material-symbols-outlined !text-[16px]">
                         {icon}
@@ -226,7 +226,7 @@ const Navbar = () => {
               </span>
             </div>
             <button
-              onClick={() => setDropdownOpen(!dropdownOpen)}
+              onClick={() => router.push("/settings")}
               className="flex items-center gap-2 hover:bg-black/5 p-1.5 rounded-full transition-all"
             >
               {session.user?.image ? (
