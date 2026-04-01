@@ -2,6 +2,11 @@ import Home from "./components/home";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 
+export const metadata = {
+  title: "Tasks | Make your task today!",
+  description: "Workflows Builder Task page make your task the way you want"
+};
+
 const page = async () => {
   const session = await getServerSession(authOptions);
 
