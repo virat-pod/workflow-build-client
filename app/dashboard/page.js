@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export const metadata = {
-  title: "Dashboard | Workflows Builder",
+  title: "Dashboard | Realtime Result",
   description: "Manage and organize your tasks the way you want",
 };
 
