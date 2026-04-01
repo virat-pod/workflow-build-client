@@ -289,13 +289,13 @@ export default function SettingsPage() {
             </div>
           </div>
         </div>
-        <div className="flex justify-end">
-          <p className="text-[11px] font-semibold tracking-[1.5px] uppercase text-[#c4bfb6] px-0.5">
+        <div className="flex justify-between items-center pt-2">
+          <p className="text-[11px] font-semibold tracking-[1.5px] uppercase text-[#c4bfb6]">
             Sign out
           </p>
           <button
             onClick={() => signOut({ callbackUrl: "/" })}
-            className="bg-red-50 border border-red-200 text-red-600 text-[12.5px] font-semibold px-3.5 py-2 rounded-[8px] hover:bg-red-100 transition-colors flex-shrink-0"
+            className="bg-red-50 border border-red-200 text-red-600 text-[12.5px] font-semibold px-3.5 py-2 rounded-[8px] hover:bg-red-100 transition-colors"
           >
             Sign out
           </button>
