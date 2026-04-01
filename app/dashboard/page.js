@@ -3,8 +3,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export const metadata = {
-  title: "Dashboard | Realtime result!",
-  description: "Workflows Builder Dashboard page. get your real time result with gamify system!"
+  title: "Dashboard | Workflows Builder",
+  description: "Manage and organize your tasks the way you want",
 };
 
 export default async function DashboardPage() {

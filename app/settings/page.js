@@ -1,10 +1,10 @@
-import Structure from "./components/structure"
+import Structure from "./components/structure";
 
 export const metadata = {
-  title: "Settings | Changes on account",
+  title: "Settings | Workflows Builder",
   description: "Workflows Builder Setting Page. all setting on your hand",
 };
 
 export default async function Setting() {
-  return <Structure/>
+  return <Structure />;
 }
