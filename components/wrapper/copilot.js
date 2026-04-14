@@ -15,15 +15,14 @@ export default function Copilot({ children }) {
     <CopilotKit runtimeUrl={`${process.env.NEXT_PUBLIC_SERVER_URL}/ai/copilot`}>
       {children}
       {session && !inActive && (
-        <div className="fixed bottom-14 sm:bottom-4 right-4 z-[9999]">
-          <CopilotPopup
-            instructions="You are a helpful AI assistant."
-            labels={{
-              title: "AI Assistant",
-              initial: "Hi, I'm Virat assistant! How can I help you?",
-            }}
-          />
-        </div>
+        <CopilotPopup
+  className="!fixed !bottom-14 sm:!bottom-4 !right-4 !z-[9999]"
+  instructions="You are a helpful AI assistant."
+  labels={{
+    title: "AI Assistant",
+    initial: "Hi, I'm Virat assistant! How can I help you?",
+  }}
+/>
       )}
     </CopilotKit>
   );
