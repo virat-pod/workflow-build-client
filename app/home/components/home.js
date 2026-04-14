@@ -541,7 +541,7 @@ export default function HomePage({ Alltasks = [], completedTodayTask = [] }) {
     
       <button
         onClick={() => setMobileTasksOpen(true)}
-        className="md:hidden fixed bottom-20 right-5 z-30 w-12 h-12 bg-[#1a1916] rounded-full flex items-center justify-center"
+        className="md:hidden fixed bottom-26 right-5 z-30 w-12 h-12 bg-[#1a1916] rounded-full flex items-center justify-center"
       >
         <svg width="18" height="18" viewBox="0 0 10 10" fill="none">
           <path
