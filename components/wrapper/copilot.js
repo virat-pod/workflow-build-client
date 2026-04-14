@@ -16,7 +16,7 @@ export default function Copilot({ children }) {
       {children}
       {session && !inActive && (
         <CopilotPopup
-  className="!fixed !bottom-14 sm:!bottom-4 !right-4 !z-[9999]"
+  className="!fixed !bottom-16 sm:!bottom-4 !right-4 !z-[9999]"
   instructions="You are a helpful AI assistant."
   labels={{
     title: "AI Assistant",
