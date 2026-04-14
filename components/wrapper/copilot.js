@@ -16,7 +16,7 @@ export default function Copilot({ children }) {
             instructions="You are a helpful AI assistant."
             labels={{
               title: "AI Assistant",
-              initial: "Hi Chad! How can I help you?",
+              initial: "Hi, I'm Virat assistant! How can I help you?",
             }}
           />
         </div>
