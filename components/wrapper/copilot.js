@@ -14,7 +14,7 @@ export default function Copilot({ children }) {
   return (
     <CopilotKit runtimeUrl={`${process.env.NEXT_PUBLIC_SERVER_URL}/ai/copilot`}>
       {children}
-      {session !inActive && (
+      {session && !inActive && (
         <div className="fixed bottom-4 right-4 z-[9999]">
           <CopilotPopup
             instructions="You are a helpful AI assistant."
