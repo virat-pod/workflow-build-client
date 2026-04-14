@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import SessionWrapper from "@/components/auth/sessionWrapper";
+import Copilot from "@/components/wrapper/copilot";
 import { NotificationProvider } from "@/lib/contexts/serviceContext";
 
 const geistSans = Geist({
@@ -35,9 +36,11 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <SessionWrapper>
           <NotificationProvider>
-          <Navbar />
-          <div className="min-h-[80vh]">{children}</div>
-          <Footer />
+            <Navbar />
+            <div className="min-h-[80vh]">
+              <Copilot>{children}</Copilot>
+            </div>
+            <Footer />
           </NotificationProvider>
         </SessionWrapper>
       </body>
